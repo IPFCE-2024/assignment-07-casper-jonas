@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include "taylor_sine.h"
-#include "exercise1.h"
 
 
 double taylor_sine(double x, int n) {
@@ -25,7 +23,7 @@ double taylor_sine(double x, int n) {
     return svar;
    
 }
-/*
+
 int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger library
     double x;
     int n;
@@ -37,8 +35,7 @@ int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger 
 
     double result = taylor_sine(x, n); //kalder funktion
 
-    printf("\nsin(%.6f) ≈ %.10f (med %d termer)\n", x, result, n); //her er 10f, 6f, antal digits i svar. svar i radianer
+    printf("\nsin(%.6f) ≈ %.10f (med %d termer)\n", x, result, n); //her er 10f, 6f, antal digits i svar.
 
     return 0;
 }
-*/
