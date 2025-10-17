@@ -19,47 +19,59 @@
 /* Create an empty stack */
 void initialize(stack *s)
 {
-    /* pre-condition: true */
-    /* post-condition: stack is empty */
+    s->head = NULL; 
 }
 
-/* Insert item x at the top of stack s */
+
 void push(int x, stack *s)
 {
-    /* pre-condition: true (linked list can always accept more items) */
-    /* post-condition: x is added to top of stack */
+    node *new_node = (node *)malloc(sizeof(node));
+
+    if (new_node == NULL) return;
+
+    new_node->data = x;
+    new_node->next = s->head;
+    s->head = new_node;
+  
 
 }
 
-/* Return (and remove) the top item of stack s */
+
 int pop(stack *s)
 {
-  /* pre-condition: stack must not be empty */
-  /* post-condition: top item is removed and returned */
+    int value = s->head->data;
 
-  return 0; // placeholder - replace with actual implementation
+    node *temp = s->head;
+    s->head = s->head->next;
+    
+    free(temp);
+    return value;
+
+  return 0; 
 }
 
-/* Test whether a stack can accept more pushes */
+
 bool full(stack *s)
 {
-    /* pre-condition: true */
-    /* post-condition: Returns true if stack is full, false otherwise */
     return false;
 }
 
-/* Test whether a stack can accept more pops */
 bool empty(stack *s)
 {
-    /* pre-condition: true */
-    /* post-condition: returns true if stack is empty, false otherwise */
 
-    return false; // placeholder - replace with actual implementation
+    return (s->head == NULL);
+    return false; 
 }
 
-/* Print the contents of the stack */
 void print(stack *s)
 {
-    /* pre-condition: true */
-    /* post-condition: prints all items in the stack */
+        printf("Stack: ");
+    
+    node *current = s->head;
+    while (current != NULL) {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    
+    printf("\n");
 }
