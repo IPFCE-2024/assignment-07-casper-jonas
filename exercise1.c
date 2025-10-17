@@ -19,7 +19,8 @@
  * n: number of terms in the series
  * Returns: approximation of sin(x)
  */
-double taylor_sine(double x, int n) {
+
+/*double taylor_sine(double x, int n) {
     if (n <= 0) return 0.0;        
     
     double sum = 0.0;               
@@ -39,39 +40,27 @@ double taylor_sine(double x, int n) {
     
     return sum; 
 }
+*/
 
 
+double taylor_sine(double x, int n) {
+    double svar = 0.0; // vores resultat. starter ved nul
+    double term = x; //første term er bare lig x
+    double x2 = x * x;
 
+    assert(n >= 0);
 
+     svar += term; //tilføjer nuværende resultat (første term er x)
+     næste term (som vi så skal tilføje til svar)
 
-
-
-
-
-
-
-
-
-
-
-//double taylor_sine(double x, int n) {
-  //  double svar = 0.0; // vores resultat. starter ved nul
-   // double term = x; //første term er bare lig x
-   // double x2 = x * x;
-
-   // assert(n >= 0);
-
-   //  svar += term; //tilføjer nuværende resultat (første term er x)
-    // næste term (som vi så skal tilføje til svar)
-
-   // term *= -x2 / ((2*i+2)*(2*i+3));
+    term *= -x2 / ((2*i+2)*(2*i+3));
     /* Vi tilføjer til termet næste term.
     x2 vil altid være det relevante at gange på da taylor rækken går op med 2 */
- //   }
+    }
 
-//    return svar;
+    return svar;
    
-//}
+}
 
 
 
@@ -95,4 +84,5 @@ int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger 
 }
 
 */
+
 
