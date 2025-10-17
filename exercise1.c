@@ -5,26 +5,65 @@
 #include "exercise1.h"
 
 
+
 double taylor_sine(double x, int n) {
-    double svar = 0.0; // vores resultat. starter ved nul
-    double term = x; //første term er bare lig x
-    double x2 = x * x;
+    if (n <= 0) return 0.0;        
+    
+    double sum = 0.0;               
+    double term = x;              
+    
+    for (int i = 0; i < n; i++) {
+       
+        if (i % 2 == 0) {
+            sum += term;            
+        } else {
+            sum -= term;            
+        }
 
-    assert(n >= 0);
+        int power_step = 2 * i + 2;
+        term = term * x * x / (power_step * (power_step + 1));
+    }
+    
+    return sum; 
+}
 
-    for (int i = 0; i < n; i++) { //Vi kører for loopet indtil at i (antal gange kørt) er lig n.
 
-    svar += term; //tilføjer nuværende resultat (første term er x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+//double taylor_sine(double x, int n) {
+  //  double svar = 0.0; // vores resultat. starter ved nul
+   // double term = x; //første term er bare lig x
+   // double x2 = x * x;
+
+   // assert(n >= 0);
+
+   //  svar += term; //tilføjer nuværende resultat (første term er x)
     // næste term (som vi så skal tilføje til svar)
 
-    term *= -x2 / ((2*i+2)*(2*i+3));
+   // term *= -x2 / ((2*i+2)*(2*i+3));
     /* Vi tilføjer til termet næste term.
     x2 vil altid være det relevante at gange på da taylor rækken går op med 2 */
-    }
+ //   }
 
-    return svar;
+//    return svar;
    
-}
+//}
+
+
+
+
+
 /*
 int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger library
     double x;
@@ -41,4 +80,5 @@ int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger 
 
     return 0;
 }
+
 */
