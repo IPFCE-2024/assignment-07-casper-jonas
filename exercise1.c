@@ -1,11 +1,24 @@
-#include <stdio.h>
-#include <math.h>
-#include <assert.h>
+/*
+ * Exercise 1: Taylor Series Approximation for Sine Function
+ * Assignment 7 - IPFCE 2025
+ * 
+ * Implement the taylor_sine function that calculates the sine of x
+ * using Taylor series approximation with n terms.
+ * 
+ * Taylor series for sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ...
+ */
+
 #include "taylor_sine.h"
-#include "exercise1.h"
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-
-
+/* 
+ * Calculate sine using Taylor series approximation
+ * x: input value in radians
+ * n: number of terms in the series
+ * Returns: approximation of sin(x)
+ */
 double taylor_sine(double x, int n) {
     if (n <= 0) return 0.0;        
     
@@ -82,3 +95,4 @@ int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger 
 }
 
 */
+
