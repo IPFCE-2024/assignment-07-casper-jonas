@@ -51,7 +51,7 @@ double taylor_sine(double x, int n) {
     assert(n >= 0);
 
      svar += term; //tilføjer nuværende resultat (første term er x)
-     næste term (som vi så skal tilføje til svar)
+     //næste term (som vi så skal tilføje til svar)
 
     term *= -x2 / ((2*i+2)*(2*i+3));
     /* Vi tilføjer til termet næste term.
@@ -84,5 +84,6 @@ int main() { //til at tjekke koden, skal skrives i en seperat hvor at vi bruger 
 }
 
 */
+
 
 
